@@ -1,13 +1,239 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-image: url(./19462.jpg);
+    /* padding-top: 60px; */
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgb(255, 255, 255);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --main-color: #04c5e3;
+}
+
+.icon {
+    color: var(--main-color);
+    font-size: 28px !important;
+}
+
+.text-muted {
+    color: white !important;
+    transition: all .7s;
+    border: 3px solid var(--main-color) !important;
+}
+
+.active {
+    color: var(--main-color) !important;
+}
+
+.text-muted:hover {
+    background-color: var(--main-color) !important;
+}
+
+.item-text {
+    padding: 20px 20px !important;
+}
+
+.item img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.item {
+    border-radius: 10px;
+    background-color: #2b2f3d;
+    transition: all .3s;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.genre {
+    background-color: var(--main-color);
+    padding: 0px 5px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+}
+
+.item i {
+    color: rgb(255, 255, 255);
+}
+
+.bg {
+    background-color: rgba(0, 0, 0, 0.741);
+}
+
+#shadow {
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: -1px -1px 30px rgba(218, 14, 14, 0.485);
+}
+
+@media screen and (max-width:750px) {
+    .text-contain {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+    .text-contain h1 {
+        font-size: 20px !important;
+    }
+    .text-contain p {
+        font-size: 15px !important;
+    }
+    #shadow {
+        width: 90%;
+        margin: auto;
+    }
+    .pointer p {
+        font-size: 10px !important;
+    }
+}
+
+.nav-item button {
+    color: white;
+    border: 2px solid var(--main-color);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px 6px 7px;
+    transition: all .6s;
+}
+
+.nav-item button:hover {
+    background-color: var(--main-color);
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-left: 4px solid #00e5ff;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    color: white !important;
+    background-color: #1c1e22 !important;
+    border: 0 solid rgba(0, 0, 0, .6) !important;
+    border-radius: 5px !important;
+}
+
+.container-logIn {
+    height: 90vh;
+}
+
+.pointer p {
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .6s;
+    border: 1px solid red;
+}
+
+.pointer p:hover {
+    background-color: transparent;
+}
+
+.catItem {
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    background-color: rgb(28, 31, 48);
+    margin: 45px 0;
+    padding: 15px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.catItem h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    position: relative;
+}
+
+.catItem h1::after {
+    content: "";
+    border: 2px solid var(--main-color);
+    background-color: var(--main-color);
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 150px;
+    height: 5px;
+    border-radius: 100%;
+    bottom: -15px;
+    position: absolute;
+}
+
+.catItem h1::before {
+    content: "";
+    border: 2px solid rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
+    top: 42px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50px;
+    height: 10px;
+    border-radius: 100%;
+    bottom: -10px;
+    position: absolute;
+}
+
+.screen {
+    transition: all .5s;
+}
+
+.screen:hover {
+    transform: scale(1.5);
+}
+
+.desc {
+    position: fixed;
+}
+
+@media screen and (max-width:750px) {
+    .desc {
+        position: relative;
+    }
+    .none {
+        display: none;
+    }
+    .screen:hover {
+        transform: scale(1);
+    }
 }
